@@ -19,8 +19,15 @@ namespace BuySave_Final.Views.Reviews
         }
 
         // GET: Reviews
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
+            var search = from m in _context.Review
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                search = search.Where(s => s.ReviewText.Contains(searchString));
+            }
             var buySave_FinalContextdb = _context.Review.Include(r => r.Product).Include(r => r.User);
             return View(await buySave_FinalContextdb.ToListAsync());
         }

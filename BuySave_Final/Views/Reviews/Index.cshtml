@@ -8,6 +8,14 @@
 
 <p>
     <a asp-action="Create">Create New</a>
+
+    <form asp-controller="Reviews" asp-action="Index">
+    <p>
+        Product Search: <input type="text" name="searchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
 </p>
 <table class="table">
     <thead>

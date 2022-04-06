@@ -21,16 +21,18 @@ namespace BuySave_Final.Views.Reviews
         // GET: Reviews
         public async Task<IActionResult> Index(string searchString)
         {
-            var buySave_FinalContextdb = _context.Review.Include(r => r.Product).Include(r => r.User);
-            var search = from s in _context.Product
-                         select s;
+            
+            ViewData["CurrentFilter"] = searchString;
+            
+            var products = from s in _context.Review.Include(r => r.Product).Include(r => r.User)
+            select s;
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                search = search.Where(s => s.ProductName.Contains(searchString));
+                products = products.Where(s => s.Product.ProductName.Contains(searchString));                                    
             }
-          
-            return View(await buySave_FinalContextdb.ToListAsync());
+           
+            return View(await products.AsNoTracking() .ToListAsync());
         }
 
         // GET: Reviews/Details/5

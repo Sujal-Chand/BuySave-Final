@@ -11,9 +11,11 @@ namespace BuySave_Final.Models
         public int CatagoryID { get; set; }
 
         [Display(Name = "Product Name")]
+        [StringLength(50, ErrorMessage = "The product name must be less than 50 characters long.")]
         public string ProductName { get; set; }
 
         [Display(Name = "Upload Date")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime CreatedDate { get; set; }
         public ICollection<Review> Review { get; set; }
         public Catagory Catagory { get; set; }

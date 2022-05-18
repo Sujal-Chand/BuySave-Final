@@ -23,7 +23,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="CreatedDate" class="control-label"></label>
-                <input asp-for="CreatedDate" class="form-control" />
+                <input asp-for="CreatedDate" class="form-control" min="1950-01-01T00:00" max= "2100-12-22T12:59"/>
                 <span asp-validation-for="CreatedDate" class="text-danger"></span>
             </div>
             <div class="form-group">

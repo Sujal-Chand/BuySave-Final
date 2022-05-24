@@ -18,7 +18,7 @@ using BuySave_Final.Models;
 
         public DbSet<BuySave_Final.Models.Product> Product { get; set; }
 
-        public DbSet<BuySave_Final.Models.Review> Review { get; set; }
+        public DbSet<BuySave_Final.Mo dels.Review> Review { get; set; }
 
         public DbSet<BuySave_Final.Models.User> User { get; set; }
     }

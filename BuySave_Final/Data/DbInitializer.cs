@@ -50,7 +50,22 @@ namespace BuySave_Final.Data
             }
             context.SaveChanges();
 
-        
+
+         /*   var user = new User[]
+            {
+            new User{UserName="lil-b00f"},
+              new User{UserName="The_Unreal"},
+                new User{UserName="chandler"},
+                  new User{UserName="Uber Yeets"},
+                    new User{UserName="inflict", CreatedDate = {12/12/2005}),
+
+            };
+            foreach (User us in user)
+            {
+                context.User.Add(us);
+            }
+            context.SaveChanges();
+         */
         }
     }
 }

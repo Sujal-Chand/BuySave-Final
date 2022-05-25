@@ -9,6 +9,7 @@ namespace BuySave_Final.Models
         public int UserID { get; set; }
 
         [Display(Name = "Country")]
+      
         public int CountryID { get; set; }
         [Display(Name = "Username")]
         [StringLength (20, ErrorMessage = "Cannot have a Username longer than 20 characters.")]
